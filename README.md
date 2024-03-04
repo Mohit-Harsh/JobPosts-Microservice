@@ -32,19 +32,19 @@
 
   ```yml
   services:
-  microservice:
-    build: https://github.com/Mohit-Harsh/JobPosts-Microservice.git#main:JobPosts
-    ports:
-      - "8080:8080"
-    links:
-      - "database:jobsdb"
-    depends_on:
-      - database
-
-  database:
-    build: https://github.com/Mohit-Harsh/JobPosts-Microservice.git#main:PostgresDB
-    ports:
-      - "5432:5432"
+    microservice:
+      build: https://github.com/Mohit-Harsh/JobPosts-Microservice.git#main:JobPosts
+      ports:
+        - "8080:8080"
+      links:
+        - "database:jobsdb"
+      depends_on:
+        - database
+  
+    database:
+      build: https://github.com/Mohit-Harsh/JobPosts-Microservice.git#main:PostgresDB
+      ports:
+        - "5432:5432"
   ```
 
 * Run the following command to create and start the containers
