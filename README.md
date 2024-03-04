@@ -1,5 +1,7 @@
 # JobPosts-Microservice
 
+![jobposts diagram](https://github.com/Mohit-Harsh/JobPosts-Microservice/assets/111693866/f02df5ba-08dd-43fa-a394-94233ef4ea0b)
+
 # Deploy using docker compose v2
 
 ### By cloning the repository
