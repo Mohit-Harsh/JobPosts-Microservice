@@ -53,7 +53,7 @@
     docker compose -f docker-compose.yml up
     ```
 
-### Deploy using docker
+# Deploy using docker
 
 * Build the image of PostgresDB
 
@@ -76,5 +76,5 @@
 * create and start jobposts container
 
   ```docker
-  docker run --rm -it -p 8080:8080 --name jobs --links jobsdb:jobsdb jobposts:latest
+  docker run --rm -it -p 8080:8080 --name jobs --link jobsdb:jobsdb jobposts:latest
   ```
