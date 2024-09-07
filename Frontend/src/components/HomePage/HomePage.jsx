@@ -14,7 +14,7 @@ export default function HomePage()
 
     useEffect(() => {
         async function fetchdata(){
-            const data = (await axios.get("http://jobposts:8080/post/")).data;
+            const data = (await axios.get("http://localhost:8080/post/")).data;
             setPosts(data);
             console.log(data);
         }
@@ -27,11 +27,11 @@ export default function HomePage()
         let response = null
         if(text.length == 0)
         {
-            response = await axios.get("http://jobposts:8080/post/");
+            response = await axios.get("http://localhost:8080/post/");
         }
         else
         {
-            response = await axios.get(`http://jobposts:8080/post/search/${text}`);
+            response = await axios.get(`http://localhost:8080/post/search/${text}`);
         }
         setPosts(response.data);
     }

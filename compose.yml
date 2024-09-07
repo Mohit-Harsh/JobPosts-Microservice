@@ -1,0 +1,58 @@
+services:
+
+  web:
+
+    container_name: web
+    build: Frontend/
+    ports:
+      - "5173:5173"
+    depends_on:
+      - jobposts
+
+    networks:
+
+      - net
+
+  jobposts:
+    container_name: jobposts
+    build: .
+    ports:
+      - "8080:8080"
+
+    depends_on:
+
+      - rabbitmq
+      - postgres
+
+    networks:
+      - net
+
+  postgres:
+
+    image: postgres:alpine
+    ports:
+
+      - "5432:5432"
+
+    environment:
+
+      POSTGRES_USER: postgres
+      POSTGRES_DB: Jobs
+      POSTGRES_PASSWORD: 12345
+
+    networks:
+      - net
+
+  rabbitmq:
+
+    image: rabbitmq:alpine
+    ports:
+
+      - "5672:5672"
+
+    networks:
+      - net
+
+networks:
+
+  net:

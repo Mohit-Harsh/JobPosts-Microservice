@@ -70,7 +70,7 @@ export default function CreatePage()
         new_application['salary'] = document.getElementById('salary').value;
         new_application['description'] = document.getElementById(styles.description).value;
 
-        let response = await axios.post("http://jobposts:8080/post/",new_application);
+        let response = await axios.post("http://localhost:8080/post/",new_application);
 
         console.log(response);
     }
